@@ -480,8 +480,8 @@ def redrawWindow(ball, line, shoot=False, update=True):
                 win.blit(sticky, (i[0], i[1] + (64 * x)))
         elif i[4] == 'coin':
             if i[5]:
-                imgs = coinimgs()
-                win.blit(imgs, (i[0], i[1]))
+                img = coinimgs()
+                win.blit(img, (i[0], i[1]))
 
     win.blit(powerMeter, (4, 520))
 
