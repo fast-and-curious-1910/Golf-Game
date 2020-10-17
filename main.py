@@ -51,19 +51,19 @@ winheight = 600
 pygame.display.set_caption('Super Minigolf')
 
 # LOAD IMAGES
-icon = pygame.image.load(os.path.join('img', 'icon.ico'))
+icon = pygame.image.load(os.path.join('imgs', 'icon.ico'))
 icon = pygame.transform.scale(icon, (32,32))
-background = pygame.image.load(os.path.join('img', 'back.png'))
-sand = pygame.image.load(os.path.join('img', 'sand.png'))
-edge = pygame.image.load(os.path.join('img', 'sandEdge.png'))
-bottom = pygame.image.load(os.path.join('img', 'sandBottom.png'))
-green = pygame.image.load(os.path.join('img', 'green.png'))
-flag = pygame.image.load(os.path.join('img', 'flag.png'))
-water = pygame.image.load(os.path.join('img', 'water.png'))
-laser = pygame.image.load(os.path.join('img', 'laser.png'))
-sticky = pygame.image.load(os.path.join('img', 'sticky.png'))
-coinPics = [pygame.image.load(os.path.join('img', 'coin1.png')), pygame.image.load(os.path.join('img', 'coin2.png')), pygame.image.load(os.path.join('img', 'coin3.png')), pygame.image.load(os.path.join('img', 'coin4.png')), pygame.image.load(os.path.join('img', 'coin5.png')), pygame.image.load(os.path.join('img', 'coin6.png')), pygame.image.load(os.path.join('img', 'coin7.png')), pygame.image.load(os.path.join('img', 'coin8.png'))]
-powerMeter = pygame.image.load(os.path.join('img', 'power.png'))
+background = pygame.image.load(os.path.join('imgs', 'back.png'))
+sand = pygame.image.load(os.path.join('imgs', 'sand.png'))
+edge = pygame.image.load(os.path.join('imgs', 'sandEdge.png'))
+bottom = pygame.image.load(os.path.join('imgs', 'sandBottom.png'))
+green = pygame.image.load(os.path.join('imgs', 'green.png'))
+flag = pygame.image.load(os.path.join('imgs', 'flag.png'))
+water = pygame.image.load(os.path.join('imgs', 'water.png'))
+laser = pygame.image.load(os.path.join('imgs', 'laser.png'))
+sticky = pygame.image.load(os.path.join('imgs', 'sticky.png'))
+coinPics = [pygame.image.load(os.path.join('imgs', 'coin1.png')), pygame.image.load(os.path.join('imgs', 'coin2.png')), pygame.image.load(os.path.join('imgs', 'coin3.png')), pygame.image.load(os.path.join('imgs', 'coin4.png')), pygame.image.load(os.path.join('imgs', 'coin5.png')), pygame.image.load(os.path.join('imgs', 'coin6.png')), pygame.image.load(os.path.join('imgs', 'coin7.png')), pygame.image.load(os.path.join('imgs', 'coin8.png'))]
+powerMeter = pygame.image.load(os.path.join('imgs', 'power.png'))
 powerMeter = pygame.transform.scale(powerMeter, (150,150))
 
 # SET ICON
@@ -480,8 +480,8 @@ def redrawWindow(ball, line, shoot=False, update=True):
                 win.blit(sticky, (i[0], i[1] + (64 * x)))
         elif i[4] == 'coin':
             if i[5]:
-                img = coinImg()
-                win.blit(img, (i[0], i[1]))
+                imgs = coinimgs()
+                win.blit(imgs, (i[0], i[1]))
 
     win.blit(powerMeter, (4, 520))
 
@@ -496,7 +496,7 @@ def redrawWindow(ball, line, shoot=False, update=True):
         powerBar()
 
 
-def coinImg():  # Animation for spinning coin, coin acts as currency
+def coinimgs():  # Animation for spinning coin, coin acts as currency
     global coinTime, coinIndex
     coinTime += 1
     if coinTime == 15:  # We don't want to delay the game so we use a count variable based off the clock speed
