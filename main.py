@@ -496,7 +496,7 @@ def redrawWindow(ball, line, shoot=False, update=True):
         powerBar()
 
 
-def coinimgs():  # Animation for spinning coin, coin acts as currency
+def coinimg():  # Animation for spinning coin, coin acts as currency
     global coinTime, coinIndex
     coinTime += 1
     if coinTime == 15:  # We don't want to delay the game so we use a count variable based off the clock speed
