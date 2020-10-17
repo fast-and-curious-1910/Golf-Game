@@ -480,7 +480,7 @@ def redrawWindow(ball, line, shoot=False, update=True):
                 win.blit(sticky, (i[0], i[1] + (64 * x)))
         elif i[4] == 'coin':
             if i[5]:
-                img = coinimg()
+                img = coinImg()
                 win.blit(img, (i[0], i[1]))
 
     win.blit(powerMeter, (4, 520))
@@ -496,7 +496,7 @@ def redrawWindow(ball, line, shoot=False, update=True):
         powerBar()
 
 
-def coinimg():  # Animation for spinning coin, coin acts as currency
+def coinImg():  # Animation for spinning coin, coin acts as currency
     global coinTime, coinIndex
     coinTime += 1
     if coinTime == 15:  # We don't want to delay the game so we use a count variable based off the clock speed
